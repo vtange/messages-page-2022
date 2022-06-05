@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラミィちゃん二周年記念プロジェクト Yukihana Lamy 2nd Anniversary Celebration Project</title>
+    <meta name="description" content="ラミィちゃん二周年おめでとう！！">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="ラミィちゃん二周年記念プロジェクト Yukihana Lamy 2nd Anniversary Celebration Project" />
+    <meta property="og:description" content="ラミィちゃん二周年おめでとう！！！！！" />
+    <meta property="og:image" content="https://nepolabo.fans/2022/lamy/android-chrome-512x512.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nepolabo.fans/2022/lamy">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ラミィちゃん二周年記念プロジェクト Yukihana Lamy 2nd Anniversary Celebration Project">
+    <meta name="twitter:image" content="https://nepolabo.fans/lamy/android-chrome-512x512.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.css"
+        integrity="sha512-FHwwMXxhAWjVhJyEgmmPg/aJ3BRmsOavHBV6yMK55Mz0rycBZcRmSowqij+ncd/JPtOzmUMZx7ZIRnGyqIE/1A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/index.css">
+
+<body>
+    <div id="ie11-cover"><p>Please use a different web browser to see this site.</p><p>このサイトを見るために他のウェブブラウザーを使ってください。</p></div>
+    <div id="nojs-cover"><p>Please turn on Javascript to fully access this site's features.</p><p>このサイトの全ての機能を利用するためにはJavaScriptを有効にする必要があります。</p></div>
+    <a href="../"><button class="back-btn">Back</button></a>
+    <div id="content">
+        <section id="letter-msgs">
+            <div class="sect-title" data-aos="fade-up">
+                <h1>Messages</h1>
+                <h3 lang="ja">手紙</h3>
+                <div class="sect-title-deco"></div>
+            </div>
+            <div class="card-columns">
+                {{#each messages}}
+                <div class="letter-msg-card-container" data-aos="fade-up">
+                    <div class="letter-msg-card card">
+                        <div class="sender-details">
+                            <div class="sender-name-container">
+                                <span class="sender-name">{{username}}</span>
+                                {{#with twitter}}
+                                <span class="twitter-name text-muted">@{{this}}</span>
+                                {{/with}}
+                            </div>
+                                <div class="stamp-outer">
+                                {{#if country_code}}
+                                    <div class="stamp-inner" data-code="{{country_code}}">
+                                        <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name_stamp}}"
+                                            alt="{{country_name_stamp}}"></span>
+                                        <span class="stamp-amt">
+                                            {{#if (eq country_code "ca")}}&#127809;
+                                            {{else}}{{country_postage}}
+                                            {{/if}}
+                                        </span>
+                                        <div class="stamp-deco"></div>
+                                        <div class="country-name">{{country_name_stamp}}</div>
+                                    </div>
+                                {{else}}
+                                    <div class="stamp-inner">
+                                        <span class="stamp-amt">
+                                            100
+                                        </span>
+                                        <div class="stamp-deco"></div>
+                                        <div class="country-name">2021</div>
+                                    </div>
+                                {{/if}}
+                                </div>
+                        </div>
+                        <div class="letter-msg">
+                        {{#if message}}
+                            <blockquote class="blockquote mb-0" {{#if isMsgInJP}}lang="ja" {{/if}}>
+                                <!-- htmlmin:ignore -->
+                                <p>{{message}}</p>
+                                <!-- htmlmin:ignore -->
+                            </blockquote>
+                            {{#if message_jp}}
+                            <hr>
+                            <blockquote class="blockquote mb-0" lang="ja">
+                                <!-- htmlmin:ignore -->
+                                <p>{{message_jp}}</p>
+                                <!-- htmlmin:ignore -->
+                            </blockquote>
+                            {{/if}}
+                        {{/if}}
+                            {{#if artwork_url}}
+                            <hr>
+                            <div class="msg-art">
+                                <a href="#to-{{artwork_url}}">
+                                    <img srcset="{{artwork_url}} 150w" sizes="150px" src="{{artwork_url}}" alt="" title="" />
+                                </a>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <footer id="credits">
+            <div class="credits">
+                <h4><span data-swaplang="EN">Organizers</span><span data-swaplang="JP">企画</span></h4>
+                <div class="maybe-columns">
+                    <span>vtange</span>
+                    <p>X-Kill/Mau</p>
+                </div>
+                <h4><span data-swaplang="EN">Cover Song: Singer</span><span data-swaplang="JP">カバーソング：歌</span></h4>
+                <div class="maybe-columns">
+                    <span>Momo Berry</span>
+                    <p>wAA</p>
+                    <p>T1sTG</p>
+                    <p>CandyCatShiroNeko</p>
+                    <p>Corneus</p>
+                    <p>Kalmen</p>
+                    <p>Alter Latte</p>
+                    <p>Blissful Darkness</p>
+                    <p>Cherry Blossoms Krye</p>
+                    <p>X-Kill</p>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">Cover Song: Mixer</span><span data-swaplang="JP">カバーソング：ミキシング</span></h4>
+                <div class="maybe-columns">
+                    <span>wAA_</span>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">Video Editor</span><span data-swaplang="JP">動画編集</span></h4>
+                <div class="maybe-columns">
+                    <span>Gessekai Goldener Adler</span>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">Website</span><span data-swaplang="JP">ウェブサイト</span></h4>
+                <div class="maybe-columns">
+                    <span>vtange</span>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">3D Modeling</span><span data-swaplang="JP">3D モデリング</span></h4>
+                <div class="maybe-columns">
+                    <span>vtange</span>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">Asuhe no Kyoukaisen - Christmas lo-fi vers.</span><span data-swaplang="JP">明日への境界線 - クリスマス lo-fi vers.</span></h4>
+                <div class="maybe-columns">
+                    <span>wAA_</span>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">Translator</span><span data-swaplang="JP">翻訳</span></h4>
+                <div class="maybe-columns">
+                    <span>vtange</span>
+                    <p>kurapan</p>
+                </div>
+                <h4 class="cred-en"><span data-swaplang="EN">Special Thanks</span><span data-swaplang="JP">スペシャルサンクス</span></h4>
+                <div class="maybe-columns">
+                    <span data-swaplang="EN">To everyone who supports this project</span><span data-swaplang="JP">当企画を応援している皆様</span>
+                </div>
+            </div>
+            <div id="disclaimer">
+                <p><span data-swaplang="EN">This is a fan project. We do not have any affiliation with Cover Corporation. It is strictly non-profit. Any unauthorized use of artwork or material in this site is strictly forbidden.</span></p>
+                <p><span data-swaplang="JP">この本はファンによる企画です。カバー株式会社とは一切関係なく、完全に非営利目的です。このサイトに掲載されているイラストや素材を無断で使用する事を固く禁じます。</span></p>
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.js"
+        integrity="sha512-ZajFBgnksNp8Rj+AbmYe8ueOu45HiSjtf3QpqnRbHlq719m6VK0FkbYIqQ8wEnlVuJ1i9pC+z6Z9ewmDnUTMCg=="
+        crossorigin="anonymous" type="application/javascript"></script>
+    <script src="src/data.js" type="application/javascript"></script>
+    <script src="src/index.js" type="application/javascript"></script>
+</body>
+
+</html>
