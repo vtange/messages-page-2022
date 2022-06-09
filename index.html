@@ -16,7 +16,7 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ラミィちゃん二周年記念プロジェクト Yukihana Lamy 2nd Anniversary Celebration Project">
-    <meta name="twitter:image" content="https://nepolabo.fans/lamy/android-chrome-512x512.png">
+    <meta name="twitter:image" content="https://nepolabo.fans/2022/lamy/android-chrome-512x512.png">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -41,69 +41,7 @@
                 <h3 lang="ja">手紙</h3>
                 <div class="sect-title-deco"></div>
             </div>
-            <div class="card-columns">
-                {{#each messages}}
-                <div class="letter-msg-card-container" data-aos="fade-up">
-                    <div class="letter-msg-card card">
-                        <div class="sender-details">
-                            <div class="sender-name-container">
-                                <span class="sender-name">{{username}}</span>
-                                {{#with twitter}}
-                                <span class="twitter-name text-muted">@{{this}}</span>
-                                {{/with}}
-                            </div>
-                                <div class="stamp-outer">
-                                {{#if country_code}}
-                                    <div class="stamp-inner" data-code="{{country_code}}">
-                                        <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name_stamp}}"
-                                            alt="{{country_name_stamp}}"></span>
-                                        <span class="stamp-amt">
-                                            {{#if (eq country_code "ca")}}&#127809;
-                                            {{else}}{{country_postage}}
-                                            {{/if}}
-                                        </span>
-                                        <div class="stamp-deco"></div>
-                                        <div class="country-name">{{country_name_stamp}}</div>
-                                    </div>
-                                {{else}}
-                                    <div class="stamp-inner">
-                                        <span class="stamp-amt">
-                                            100
-                                        </span>
-                                        <div class="stamp-deco"></div>
-                                        <div class="country-name">2021</div>
-                                    </div>
-                                {{/if}}
-                                </div>
-                        </div>
-                        <div class="letter-msg">
-                        {{#if message}}
-                            <blockquote class="blockquote mb-0" {{#if isMsgInJP}}lang="ja" {{/if}}>
-                                <!-- htmlmin:ignore -->
-                                <p>{{message}}</p>
-                                <!-- htmlmin:ignore -->
-                            </blockquote>
-                            {{#if message_jp}}
-                            <hr>
-                            <blockquote class="blockquote mb-0" lang="ja">
-                                <!-- htmlmin:ignore -->
-                                <p>{{message_jp}}</p>
-                                <!-- htmlmin:ignore -->
-                            </blockquote>
-                            {{/if}}
-                        {{/if}}
-                            {{#if artwork_url}}
-                            <hr>
-                            <div class="msg-art">
-                                <a href="#to-{{artwork_url}}">
-                                    <img srcset="{{artwork_url}} 150w" sizes="150px" src="{{artwork_url}}" alt="" title="" />
-                                </a>
-                            </div>
-                            {{/if}}
-                        </div>
-                    </div>
-                </div>
-                {{/each}}
+            <div class="card-columns" id="cards">
             </div>
         </section>
 
@@ -167,6 +105,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.js"
         integrity="sha512-ZajFBgnksNp8Rj+AbmYe8ueOu45HiSjtf3QpqnRbHlq719m6VK0FkbYIqQ8wEnlVuJ1i9pC+z6Z9ewmDnUTMCg=="
         crossorigin="anonymous" type="application/javascript"></script>
+    <script src="src/mithril.js" type="application/javascript"></script>
     <script src="src/data.js" type="application/javascript"></script>
     <script src="src/index.js" type="application/javascript"></script>
 </body>
