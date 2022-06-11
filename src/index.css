@@ -44,6 +44,10 @@ body {
 }
 
 /*--------------CREDITS---------------*/
+body:not(.showCredits) #credits-popup {
+    display: none;
+}
+
 .credits p {
     margin-bottom: 0.6rem;
     margin-top: 0.6rem;
@@ -67,7 +71,112 @@ body {
 }
 /*--------------CREDITS---------------*/
 
+.back-btn {
+    border: 2px outset #66cdaa;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #66cdaa;
+    cursor: pointer;
+    font-family: arial;
+    font-weight: 600;
+    position: absolute;
+    left: 10px;
+    height: 40px;
+    width: 76px;
+    z-index: 1;
+}
+
+.back-btn:active {
+    border: 2px solid #6699aa;
+    background-color: #eee;
+    color: #6699aa;
+}
+
+.close-button {
+    background: rgb(255,120,160);
+    border: 2px outset gold;
+    border-radius: 1rem;
+    color: rgb(130,0,0);
+    cursor: pointer;
+    height:40px;
+    position: fixed;
+    font-family: arial;
+    font-size: 2.1rem;
+    right: 20px;
+    top: 30px;
+    text-align: center;
+    width: 48px;
+    vertical-align: center;
+    z-index: 999999;
+}
+
+.close-button:active {
+    border-color: goldenrod;
+    border-style: solid;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.credits-btn {
+    border: 2px outset #66cdaa;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #66cdaa;
+    cursor: pointer;
+    font-family: arial;
+    font-weight: 600;
+    height: 40px;
+    width: 76px;
+    z-index: 1;
+}
+
+.credits-btn:active {
+    border: 2px solid #6699aa;
+    background-color: #eee;
+    color: #6699aa;
+}
+
+.messages-btn {
+    border: 2px outset #66cdaa;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #66cdaa;
+    cursor: pointer;
+    font-family: arial;
+    font-weight: 600;
+    height: 40px;
+    width: 76px;
+    z-index: 1;
+}
+
+.messages-btn:active {
+    border: 2px solid #6699aa;
+    background-color: #eee;
+    color: #6699aa;
+}
+
+.back-btn:active, .close-button:active,
+.messages-btn:active, .credits-button:active {
+    transform: translateY(1px);
+}
+
 /*--------------MESSAGES---------------*/
+body:not(.showMessages) #messages-popup {
+    display: none;
+}
+
+.popup {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid gold;
+    border-radius: 20px;
+    position: absolute;
+    user-select: none;
+    z-index: 2;
+}
 
 section.postcards {
     box-sizing: border-box;

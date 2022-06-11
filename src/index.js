@@ -35,3 +35,11 @@ var Hello = {
 if (data) {
     m.mount(root, Hello)
 }
+
+function toggleMessagesPopup(bool) {
+    document.body.classList.toggle("showMessages",bool);
+}
+
+function toggleCreditsPopup(bool) {
+    document.body.classList.toggle("showCredits",bool);
+}
