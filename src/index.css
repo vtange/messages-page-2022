@@ -49,6 +49,10 @@ body:not(.showCredits) #credits-popup {
     display: none;
 }
 
+.credits, #disclaimer {
+    color: white;
+}
+
 .credits p {
     margin-bottom: 0.6rem;
     margin-top: 0.6rem;
@@ -146,18 +150,15 @@ body:not(.showMessages) #messages-popup {
     background: rgba(0,0,0,0.4);
     border: 1px solid gold;
     border-radius: 20px;
-    position: absolute;
-    user-select: none;
-    z-index: 2;
-}
-
-section.postcards {
     box-sizing: border-box;
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 5%;
     margin-bottom: 5%;
+    position: absolute;
+    user-select: none;
     width:100%;
+    z-index: 2;
 }
 
 .postcard, .picturecard {
