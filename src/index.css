@@ -66,3 +66,340 @@ body {
     }
 }
 /*--------------CREDITS---------------*/
+
+/*--------------MESSAGES---------------*/
+
+section.postcards {
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    margin-bottom: 5%;
+    width:100%;
+}
+
+.postcard, .picturecard {
+    box-shadow: 5px 8px 20px -5px rgba(10, 10, 10, 0.75);
+    background-color: white;
+    break-inside: avoid;
+    color: rgb(20,20,20);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 3.7rem;
+    padding: 10px;
+}
+
+.border {
+    border: 3px solid steelblue;
+    padding: 2px;
+}
+
+.border-thin {
+    border: 1px solid silver;
+    padding: 5px;
+}
+
+.messages p {
+    white-space: pre-wrap;
+}
+
+.messages > div {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+}
+
+.messages p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+}
+
+.messages > div + div[lang="ja"] {
+    border-top: 2px solid #ddd;
+}
+
+.postcard-header, .picturecard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picturecard {
+    cursor: pointer;
+    position: relative;
+}
+.picturecard-header {
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(47,47,47,0.75) 31%, rgba(48,48,48,0.75) 100%);
+    color: white;
+    padding-bottom: 15px;
+    position: absolute;
+    width:calc(100% - 20px);
+}
+
+.picturecard img {
+    width:100%;
+}
+
+.user-info {
+    align-items: baseline;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    max-width: calc(80% - 1rem);
+}
+
+.user-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 0.3rem;
+    text-overflow: ellipsis;
+}
+
+.user-twitter {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-style: italic;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.stamp-outer {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/stamp_border.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 72px;
+    position: relative;
+    width: 90px;
+}
+
+.stamp-inner {
+    overflow: hidden;
+    position: relative;
+    top: 6px;
+    left: 7px;
+    bottom: 26px;
+    right: 6px;
+    width: 86%;
+    height: 80%;
+    background-color: lightblue;
+}
+
+.stamp-inner[data-code="us"],
+.stamp-inner[data-code="it"]{
+    background-color: cornflowerblue;
+}
+
+.stamp-inner[data-code="jp"]{
+    background-color: darkseagreen;
+}
+
+.stamp-inner[data-code="id"]{
+    background-color: lightseagreen;
+}
+
+.stamp-inner[data-code="in"],
+.stamp-inner[data-code="br"]{
+    background-color: yellowgreen;
+}
+
+.stamp-inner[data-code="cn"]{
+    background-color: steelblue;
+}
+
+.stamp-inner[data-code="sa"],
+.stamp-inner[data-code="ca"]{
+    background-color: burlywood;
+}
+
+.stamp-inner[data-code="ca"] .stamp-amt {
+    font-size: 1rem;
+}
+
+.stamp-inner[data-code="ca"] .stamp-amt::before{
+    content: "P";
+    color: burlywood;
+    font-family: auto;
+    position: absolute;
+    left: 4px;
+    top: 3px;
+}
+
+.stamp-inner[data-code="ar"],
+.stamp-inner[data-code="de"],
+.stamp-inner[data-code="au"]{
+    background-color: silver;
+}
+
+.stamp-inner[data-code="kz"],
+.stamp-inner[data-code="nz"]{
+    background-color: lavender;
+}
+
+.stamp-inner[data-code="gb"],
+.stamp-inner[data-code="tw"]{
+    background-color: plum;
+}
+
+.stamp-inner[data-code="mx"],
+.stamp-inner[data-code="ph"]{
+    background-color: goldenrod;
+}
+
+.stamp-inner[data-code="th"] {
+    background-color: palevioletred;
+}
+
+.stamp-inner[data-code="sg"]{
+    background-color: cadetblue;
+}
+
+.stamp-inner[data-code="hk"],
+.stamp-inner[data-code="vn"]{
+    background-color: lightgrey;
+}
+
+
+.stamp-amt {
+    font-family: "Merriweather";
+    font-size: 0.7rem;
+    opacity: 0.7;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    z-index: 20;
+}
+
+.stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/heart.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.stamp-inner[data-code] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/sak.png);
+    background-position: left;
+    bottom: 6px;
+    right: -10px;
+    width: 3rem;
+    height: 2.5rem;
+}
+
+section.postcards:nth-child(even) .stamp-inner[data-code="jp"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/chrys.png);
+}
+
+.stamp-inner[data-code="us"] .stamp-deco,
+.stamp-inner[data-code="ca"] .stamp-deco,
+.stamp-inner[data-code="au"] .stamp-deco,
+.stamp-inner[data-code="nz"] .stamp-deco,
+.stamp-inner[data-code="de"] .stamp-deco,
+.stamp-inner[data-code="fr"] .stamp-deco,
+.stamp-inner[data-code="gb"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/rose.png);
+}
+
+.stamp-inner[data-code="ph"] .stamp-deco,
+.stamp-inner[data-code="my"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/hib2.png);
+}
+
+.stamp-inner[data-code="id"] .stamp-deco,
+.stamp-inner[data-code="tw"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/hib1.png);
+}
+
+.stamp-inner[data-code="sg"] .stamp-deco,
+.stamp-inner[data-code="th"] .stamp-deco,
+.stamp-inner[data-code="vn"] .stamp-deco  {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/gerb.png);
+}
+
+.stamp-inner[data-code="in"] .stamp-deco,
+.stamp-inner[data-code="kr"] .stamp-deco,
+.stamp-inner[data-code="br"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/cos.png);
+}
+
+.stamp-inner[data-code="ar"] .stamp-deco,
+.stamp-inner[data-code="es"] .stamp-deco,
+.stamp-inner[data-code="it"] .stamp-deco,
+.stamp-inner[data-code="mx"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/sun.png);
+}
+
+.stamp-inner[data-code="dk"] .stamp-deco,
+.stamp-inner[data-code="fi"] .stamp-deco,
+.stamp-inner[data-code="ru"] .stamp-deco {
+    background-image: url(https://nepolabo.fans/lamy/dist/img/flake.png);
+}
+
+.country-name {
+    bottom: -12px;
+    color: rgba(30,30,30,.7);
+    font-family: cursive;
+    font-size: 0.7rem;
+    font-weight: 900;
+    height: 30px;
+    margin-left: 4px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.flag-icon {
+    font-size: 2rem;
+    margin: 4px;
+    box-shadow: 0 0 3px rgb(100 100 100);
+}
+
+.msg-art {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (min-width: 450px) {
+    section.postcards {
+        column-count: 1;
+    }
+}
+
+/* medium */
+@media (min-width: 750px) {
+    section.postcards {
+        column-count: 2;
+    }
+    .messages p {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 1.15rem;
+    }
+    .user-name {
+        font-size: 1.25rem;
+    }
+    .user-twitter {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    section.postcards {
+         column-count: 3;
+     }
+     .messages p {
+         font-family: 'Noto Serif JP', serif;
+         font-size: 1.25rem;
+     }
+     .user-name {
+         font-size: 1.5rem;
+     }
+     .user-twitter {
+         font-size: 1rem;
+     }
+ }
