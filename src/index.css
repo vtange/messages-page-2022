@@ -74,9 +74,14 @@ body:not(.showCredits) #credits-popup {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    position: relative;
+    position: fixed;
     height: 100%;
     width: 100%;
+}
+/* so when you open the scrollable modals the girls and stars don't move left */
+body.showCredits .FULLSCRN,
+body.showMessages .FULLSCRN {
+    width: calc(100% + 16px);
 }
 
 .nplb {
