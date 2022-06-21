@@ -47,7 +47,7 @@ var colors = ["red","orange","yellow","green","aqua","blue","purp"];
 // Fireworks stuff
 function generateFirework(e){
     var newFireworkCont = document.createElement("div");
-    newFireworkCont.className = "firework-"+colors[Math.ceil(Math.random()*colors.length)];
+    newFireworkCont.className = "firework-"+colors[Math.floor(Math.random()*colors.length)];
     newFireworkCont.style.position = "absolute";
     newFireworkCont.style.top = e.y+"px";
     newFireworkCont.style.left = e.x+"px";
@@ -68,7 +68,7 @@ function generateFirework(e){
     newFireworkCont.appendChild(newUchiage);
     sky.appendChild(newFireworkCont);
     window.setTimeout(function(){
-        sky.removeChild(newFireworkCont);
+        // sky.removeChild(newFireworkCont);
     },3000);
 }
 
@@ -95,14 +95,14 @@ function recalcScreenSize(){
 }
 window.addEventListener("resize", debounce(recalcScreenSize,200));
 var lastClick = 1;
-window.setInterval(function(){
-if(Date.now() - lastClick > 5000) {
-    generateFirework({
-        x:Math.random()*windowWidth*.9,
-        y:Math.min(0.5,Math.random())*windowHeight
-    })
-}
-},5000);
+// window.setInterval(function(){
+// if(Date.now() - lastClick > 5000) {
+//     generateFirework({
+//         x:Math.random()*windowWidth*.9,
+//         y:Math.min(0.5,Math.random())*windowHeight
+//     })
+// }
+// },5000);
 
 sky.addEventListener("click", function(e){
     lastClick = Date.now();
