@@ -43,15 +43,16 @@ function toggleCreditsPopup(bool) {
     document.body.classList.toggle("showCredits",bool);
 }
 
+var colors = ["red","orange","yellow","green","aqua","blue","purp"];
 // Fireworks stuff
 function generateFirework(e){
     var newFireworkCont = document.createElement("div");
-    newFireworkCont.className = "firework-red";
+    newFireworkCont.className = "firework-"+colors[Math.ceil(Math.random()*colors.length)];
     newFireworkCont.style.position = "absolute";
     newFireworkCont.style.top = e.y+"px";
     newFireworkCont.style.left = e.x+"px";
     var newFirework = document.createElement("div");
-    newFirework.className = "firework";
+    newFirework.className = Math.round(Math.random()) ? "firework" : "fireworkwithcolorchange";
     var newUchiage = document.createElement("div");
     newUchiage.className = "uchiage";
     var newSparkle = document.createElement("div");

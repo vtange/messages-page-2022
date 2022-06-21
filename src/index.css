@@ -226,6 +226,18 @@ body.showMessages .FULLSCRN {
     }
   }
 
+  .fireworkwithcolorchange {
+    animation: fireworkwithcolorchange 2s normal forwards linear;
+    animation-delay: 1s;
+    background: url(p.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height:150px;
+    opacity: 0;
+    transform: scale(0.0);
+    width:150px;
+}
+
   @keyframes fireworkwithcolorchange {
       0% {
         filter: brightness(0.5) hue-rotate(0deg);
