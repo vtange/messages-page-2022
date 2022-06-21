@@ -100,12 +100,6 @@ body.showMessages .FULLSCRN {
     z-index: 1;
 }
 
-.f {
-    left: 30%;
-    position: absolute;
-    top:20%;
-}
-
 .firework-red {
     filter: hue-rotate(45deg);
 }

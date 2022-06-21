@@ -7,8 +7,7 @@ function init() {
     });
 }
 var root = document.getElementById('cards');
-
-var count = 0 // added a variable
+var sky = document.getElementById('sky');
 
 var Hello = {
     view: function () {
@@ -45,3 +44,66 @@ function toggleCreditsPopup(bool) {
 }
 
 // Fireworks stuff
+function generateFirework(e){
+    var newFireworkCont = document.createElement("div");
+    newFireworkCont.className = "firework-red";
+    newFireworkCont.style.position = "absolute";
+    newFireworkCont.style.top = e.y+"px";
+    newFireworkCont.style.left = e.x+"px";
+    var newFirework = document.createElement("div");
+    newFirework.className = "firework";
+    var newUchiage = document.createElement("div");
+    newUchiage.className = "uchiage";
+    var newSparkle = document.createElement("div");
+    newSparkle.className = "sparkle";
+    var newSparkle1 = document.createElement("div");
+    newSparkle1.className = "sparkle1";
+    var newSparkle2 = document.createElement("div");
+    newSparkle2.className = "sparkle2";
+    newUchiage.appendChild(newSparkle);
+    newUchiage.appendChild(newSparkle1);
+    newUchiage.appendChild(newSparkle2);
+    newFireworkCont.appendChild(newFirework);
+    newFireworkCont.appendChild(newUchiage);
+    sky.appendChild(newFireworkCont);
+    window.setTimeout(function(){
+        sky.removeChild(newFireworkCont);
+    },3000);
+}
+
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+var windowWidth = window.outerWidth;
+var windowHeight = window.outerHeight;
+function recalcScreenSize(){
+  windowWidth = window.outerWidth;
+  windowHeight = window.outerHeight;
+}
+window.addEventListener("resize", debounce(recalcScreenSize,200));
+var lastClick = 1;
+window.setInterval(function(){
+if(Date.now() - lastClick > 5000) {
+    generateFirework({
+        x:Math.random()*windowWidth*.9,
+        y:Math.min(0.5,Math.random())*windowHeight
+    })
+}
+},5000);
+
+sky.addEventListener("click", function(e){
+    lastClick = Date.now();
+    generateFirework(e);
+});
