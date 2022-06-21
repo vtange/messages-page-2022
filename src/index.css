@@ -334,6 +334,20 @@ body.showMessages .FULLSCRN {
     transform: translateY(1px);
 }
 
+.btn-icon {
+    cursor: pointer;
+    max-width: 56px;
+}
+
+.btn-icon:hover {
+    filter:brightness(1.5);
+}
+
+.btn-icon:active {
+    filter:brightness(0.75);
+    transform: translateY(2px);
+}
+
 /*--------------MESSAGES---------------*/
 body:not(.showMessages) #messages-popup {
     display: none;
