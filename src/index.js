@@ -8,6 +8,7 @@ function init() {
 }
 var root = document.getElementById('cards');
 var sky = document.getElementById('sky');
+var nplb = document.getElementById('nplb');
 
 var Hello = {
     view: function () {
@@ -68,10 +69,17 @@ function generateFirework(e){
     newFireworkCont.appendChild(newUchiage);
     sky.appendChild(newFireworkCont);
     window.setTimeout(function(){
-        // sky.removeChild(newFireworkCont);
+        nplb.style.filter = "brightness(2)";
+        resetBrightness();
+    },1150);
+    window.setTimeout(function(){
+        sky.removeChild(newFireworkCont);
     },3000);
 }
 
+var resetBrightness = debounce(function(){
+    nplb.style.filter = "brightness(1.2)";
+},1500);
 function debounce(func, wait, immediate) {
 	var timeout;
 	return function() {

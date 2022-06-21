@@ -84,7 +84,7 @@ body.showMessages .FULLSCRN {
     width: calc(100% + 16px);
 }
 
-.nplb {
+#nplb {
     background: url(nplb.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -96,6 +96,7 @@ body.showMessages .FULLSCRN {
     max-width: 67vh;
     position: absolute;
     transform: translateX(-50%);
+    transition: filter 0.2s ease-out;
     width: 100vh;
     z-index: 1;
 }
