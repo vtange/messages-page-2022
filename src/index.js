@@ -71,7 +71,7 @@ function generateFirework(e){
     window.setTimeout(function(){
         nplb.style.filter = "brightness(2)";
         resetBrightness();
-    },1150);
+    },1190);
     window.setTimeout(function(){
         sky.removeChild(newFireworkCont);
     },3000);
