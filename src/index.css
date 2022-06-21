@@ -100,17 +100,105 @@ body.showMessages .FULLSCRN {
     z-index: 1;
 }
 
+.f {
+    left: 30%;
+    position: absolute;
+    top:20%;
+}
+
+.firework-red {
+    filter: hue-rotate(45deg);
+}
+
+.firework-orange {
+    filter: hue-rotate(90deg);
+}
+
+.firework-yellow {
+    filter: hue-rotate(125deg);
+}
+
+.firework-green {
+    filter: hue-rotate(-180deg);
+}
+
+.firework-aqua {
+    filter: hue-rotate(-90deg);
+}
+
+.firework-blue {
+    filter: hue-rotate(-45deg);
+}
+
+.firework-purp {
+    filter: hue-rotate(0deg);
+}
+
 .firework {
     animation: firework 2s normal forwards linear;
+    animation-delay: 1s;
     background: url(p.png);
     background-repeat: no-repeat;
     background-size: contain;
     height:200px;
-    left: 30%;
-    position: absolute;
-    top:20%;
+    opacity: 0;
+    transform: scale(0.0);
     width:200px;
 }
+
+.uchiage {
+    animation: uchiage 1s ease-out;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.sparkle,
+.sparkle1,
+.sparkle2 {
+    animation: sparkle 0.25s linear infinite;
+    background: url(uchiage.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height:40px;
+    width:40px;
+    opacity: 0;
+}
+
+.sparkle1 {
+    animation-delay: 0.08s;
+}
+.sparkle2 {
+    animation-delay: 0.15s;
+}
+
+@keyframes uchiage {
+    0% {
+      transform: translateY(300px);
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px);
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes sparkle {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 
 @keyframes firework {
     0% {
@@ -129,21 +217,52 @@ body.showMessages .FULLSCRN {
       background: url(pglow.png);
       background-repeat: no-repeat;
       background-size: contain;
-      filter: hue-rotate(0deg);
     }
     90% {
-      filter: brightness(1) hue-rotate(90deg);
+      filter: brightness(1.5);
       opacity: 1;
     }
     100% {
       background: url(pglow.png);
       background-repeat: no-repeat;
       background-size: contain;
-      filter: hue-rotate(90deg);
+      filter: brightness(1);
       transform: scale(3);
       opacity: 0;
     }
   }
+
+  @keyframes fireworkwithcolorchange {
+      0% {
+        filter: brightness(0.5) hue-rotate(0deg);
+        transform: scale(0.0);
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      40% {
+        filter: brightness(1.5) hue-rotate(0deg);
+        transform: scale(1.8);
+      }
+      70% {
+        background: url(pglow.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      90% {
+        filter: brightness(1.5) hue-rotate(90deg);
+        opacity: 1;
+      }
+      100% {
+        background: url(pglow.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: brightness(1) hue-rotate(90deg);
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
 
 /*--------------BUTTONS---------------*/
 .button-container {

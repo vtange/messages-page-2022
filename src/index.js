@@ -43,3 +43,5 @@ function toggleMessagesPopup(bool) {
 function toggleCreditsPopup(bool) {
     document.body.classList.toggle("showCredits",bool);
 }
+
+// Fireworks stuff
