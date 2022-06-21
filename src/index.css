@@ -100,6 +100,10 @@ body.showMessages .FULLSCRN {
     z-index: 1;
 }
 
+#sky div:not(:first-child) {
+    transform: translate(-50%, -25%);
+}
+
 .firework-red {
     filter: hue-rotate(45deg);
 }
