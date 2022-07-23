@@ -14,20 +14,18 @@ var Hello = {
     view: function () {
         return m("section.postcards", data.messages.map(o =>
             m(".postcard",
-                m(".border",
-                    m(".border-thin",
-                        [m(".postcard-header",
-                                m(".user-info",
-                                    [m("span.user-name", o.name),
-                                    (o.twit?m("span.user-twitter", "@"+o.twit):"")])),
-                            m(".messages",
-                                [m('div[lang="' + (o.isJP ? 'ja' : 'en') + '"]',
-                                        m("p", o.msg)),
-                                    (o.msg_jp ? m('div[lang="ja"]', m("p", o.msg_jp)) : ""),
-                                    (o.art ? m(".msg-art", m('a[href="' + o.art.replace(/\_\./g, ".").replace(/art(.*)\/min/g, "art$1") + '"]', m('img[src="' + o.art + '"][alt=""][title=""]'))) : "")
-                                ]
-                            )
-                        ])))
+                [m(".postcard-header",
+                        m(".user-info",
+                            [m("span.user-name", o.name),
+                            (o.twit?m("span.user-twitter", "@"+o.twit):"")])),
+                    m(".messages",
+                        [m('div[lang="' + (o.isJP ? 'ja' : 'en') + '"]',
+                                m("p", o.msg)),
+                            (o.msg_jp ? m('div[lang="ja"]', m("p", o.msg_jp)) : ""),
+                            (o.art ? m(".msg-art", m('a[href="' + o.art.replace(/\_\./g, ".").replace(/art(.*)\/min/g, "art$1") + '"]', m('img[src="' + o.art + '"][alt=""][title=""]'))) : "")
+                        ]
+                    )
+                ])
         ));
     }
 }

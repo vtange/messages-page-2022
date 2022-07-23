@@ -417,7 +417,7 @@ body:not(.showMessages) #messages-popup {
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 3.7rem;
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 .border {
@@ -731,5 +731,18 @@ section.postcards:nth-child(even) .stamp-inner[data-code="jp"] .stamp-deco {
      }
      .user-twitter {
          font-size: 1rem;
+     }
+ }
+
+
+ @media (min-width: 2000px) {
+    section.postcards {
+         column-count: 4;
+     }
+ }
+
+ @media (min-width: 2800px) {
+    section.postcards {
+         column-count: 5;
      }
  }
