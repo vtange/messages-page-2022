@@ -8,7 +8,8 @@ function init() {
 }
 var root = document.getElementById('cards');
 var sky = document.getElementById('sky');
-var nplb = document.getElementById('nplb');
+var picnic = document.getElementById('picnic');
+var tint = document.getElementById('picnictint');
 
 function getColor(){
     var val = Math.random() * 5;
@@ -55,12 +56,14 @@ function toggleMessagesPopup(bool) {
 function toggleCreditsPopup(bool) {
     document.body.classList.toggle("showCredits",bool);
 }
-
+var tot = 0;
+var fireworksactive = 0;
 var colors = ["red","orange","yellow","green","aqua","blue","purp"];
 // Fireworks stuff
 function generateFirework(e){
+    var colidx = Math.floor(Math.random()*colors.length);
     var newFireworkCont = document.createElement("div");
-    newFireworkCont.className = "firework-"+colors[Math.floor(Math.random()*colors.length)];
+    newFireworkCont.className = "firework-"+colors[colidx];
     newFireworkCont.style.position = "absolute";
     newFireworkCont.style.top = e.y+"px";
     newFireworkCont.style.left = e.x+"px";
@@ -80,8 +83,14 @@ function generateFirework(e){
     newFireworkCont.appendChild(newFirework);
     newFireworkCont.appendChild(newUchiage);
     sky.appendChild(newFireworkCont);
+    tot += colidx;
+    fireworksactive++;
     window.setTimeout(function(){
-        nplb.style.filter = "brightness(2)";
+        //check how much red we have on screen;
+        picnic.style.filter = "brightness(1.6)";
+        tint.style.opacity = 1-(tot/(fireworksactive*6));
+        fireworksactive--;
+        tot -= colidx;
         resetBrightness();
     },1190);
     window.setTimeout(function(){
@@ -90,7 +99,8 @@ function generateFirework(e){
 }
 
 var resetBrightness = debounce(function(){
-    nplb.style.filter = "brightness(1.2)";
+    picnic.style.filter = "brightness(1)";
+    tint.style.opacity = 0;
 },1500);
 function debounce(func, wait, immediate) {
 	var timeout;

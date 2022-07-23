@@ -84,24 +84,33 @@ body.showMessages .FULLSCRN {
     width: calc(100% + 16px);
 }
 
-#nplb {
+#picnic {
     background: url(nplb.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 0;
-    filter: brightness(1.2);
-    height: 100%;
-    left:50%;
-    max-height: 25vh;
-    max-width: 67vh;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: filter 0.2s ease-out;
-    width: 100vh;
     z-index: 1;
 }
 
-#sky > div:not(:first-child) {
+#picnictint {
+    background: url(nplbtint.png);
+    opacity: 0;
+    z-index: 2;
+}
+
+#picnic, #picnictint {
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    filter: brightness(1);
+    height: 100%;
+    left:50%;
+    max-height: 25vh;
+    max-width: 71vh;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all 0.2s ease-out;
+    width: 100vh;
+}
+
+#sky > div {
     transform: translate(-50%, -25%);
 }
 
