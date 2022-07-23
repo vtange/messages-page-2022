@@ -10,10 +10,24 @@ var root = document.getElementById('cards');
 var sky = document.getElementById('sky');
 var nplb = document.getElementById('nplb');
 
+function getColor(){
+    var val = Math.random() * 5;
+    if (val < 1) {
+        return "rgb("+247+","+255+","+217+")";
+    } else if (val < 2) {
+        return "rgb("+215+","+255+","+225+")";
+    } else if (val < 3) {
+        return "rgb("+216+","+240+","+255+")";
+    } else if (val < 4) {
+        return "rgb("+227+","+215+","+255+")";
+    }
+    return "rgb("+255+","+219+","+215+")";
+}
+
 var Hello = {
     view: function () {
         return m("section.postcards", data.messages.map(o =>
-            m(".postcard",
+            m(".postcard",{style: {"background-color": getColor()}},
                 [m(".postcard-header",
                         m(".user-info",
                             [m("span.user-name", o.name),
