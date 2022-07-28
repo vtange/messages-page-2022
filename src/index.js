@@ -180,3 +180,8 @@ runTimer();
 window.setInterval(function(){
     runTimer();
 },1000);
+
+var gallery_a = new SimpleLightbox('.msg-art a',{disableScroll:false});
+gallery_a.on('error.simplelightbox', function (e) {
+    console.log(e); // some usefull information
+});
